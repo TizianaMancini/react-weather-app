@@ -98,6 +98,7 @@ export default function Weather() {
     let forecastElement = document.querySelector("#forecast");
 
     let forecastHTML = `<div class="row">`;
+    /*
     let days = [
       "Monday",
       "Tuesday",
@@ -105,8 +106,8 @@ export default function Weather() {
       "Thursday",
       "Friday",
       "Saturday",
-    ];
-
+    ] 
+    */
     //finds the weather for the future forecast days
 
     forecast.forEach(function (forecastDay, index) {
