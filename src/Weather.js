@@ -143,6 +143,18 @@ export default function Weather() {
       </div>
     );
   } else {
-    return <div className="search-form">{display}</div>;
+    return (
+      <div className="container">
+        <div class="weather-app-wrapper">
+          <div className="weather-app">
+            <div className="search-form">{display}</div>
+
+            <div className="current-temperature">{currentTemp}</div>
+
+            <div class="weather-forecast" id="forecast"></div>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
