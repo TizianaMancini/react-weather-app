@@ -6,10 +6,10 @@ import "./index.css";
 function App() {
   return (
     <div className="App">
-      <Weather defaultCity="Toronto" temperature="5" />
+      <Weather />
       <small>
         <a
-          href="https://github.com/TizianaMancini/Weather-App"
+          href="https://github.com/TizianaMancini/react-weather-app"
           target="_blank"
           rel="noreferrer"
         >
