@@ -64,6 +64,70 @@ export default function Weather() {
     </form>
   );
 
+  let currentTemp = (
+    <div className="current-temperature">
+      <div class="overview">
+        <h1 id="city">{city}</h1>
+
+        <ul>
+          <li>
+            <strong>
+              <em> Last updated: </em>
+            </strong>
+            <span id="date"></span>
+          </li>
+          <br />
+          <li id="description">{weather.description}</li>
+        </ul>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <div class="clearfix weather-temperature">
+            <img src={weather.image} alt={weather.description} id="icon" />
+
+            <strong id="temperature">{Math.round(weather.temperature)} </strong>
+
+            <span class="units">
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button
+                  type="button"
+                  class="btn btn-danger active"
+                  id="celsius-link"
+                >
+                  ºC
+                </button>
+
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  id="fahrenheit-link"
+                >
+                  ºF
+                </button>
+              </div>
+            </span>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <ul class="weather-details">
+            <li>
+              <strong>Humidity: </strong>
+              <span id="humidity"></span>
+              {weather.humidity}%
+            </li>
+            <li>
+              <strong>Wind: </strong>
+              <span id="wind"></span> {Math.round(weather.wind)} km/h
+            </li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+    </div>
+  );
+
   if (load) {
     return (
       <div className="container">
@@ -71,79 +135,7 @@ export default function Weather() {
           <div className="weather-app">
             <div className="search-form">{display}</div>
 
-            <div class="overview">
-              <h1 id="city">{city}</h1>
-
-              <ul>
-                <li>
-                  <strong>
-                    <em> Last updated: </em>
-                  </strong>
-                  <span id="date"></span>
-                </li>
-                <br />
-                <li id="description"></li>
-              </ul>
-            </div>
-
-            <div class="row">
-              <div class="col-md-8">
-                <div class="clearfix weather-temperature">
-                  <img src="" alt="" id="icon" />
-
-                  <strong id="temperature"></strong>
-
-                  <span class="units">
-                    <div
-                      class="btn-group"
-                      role="group"
-                      aria-label="Basic example"
-                    >
-                      <button
-                        type="button"
-                        class="btn btn-danger active"
-                        id="celsius-link"
-                      >
-                        ºC
-                      </button>
-
-                      <button
-                        type="button"
-                        class="btn btn-danger"
-                        id="fahrenheit-link"
-                      >
-                        ºF
-                      </button>
-                    </div>
-                  </span>
-                </div>
-              </div>
-
-              <div class="col-4">
-                <ul class="weather-details">
-                  <li>
-                    <strong>Humidity: </strong>
-                    <span id="humidity"></span>%
-                  </li>
-                  <li>
-                    <strong>Wind: </strong>
-                    <span id="wind"></span> km/h
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <ul className="weather-details">
-              <li>Temperature: {Math.round(weather.temperature)}ºC</li>
-              <li>Description: {weather.description}</li>
-              <li>Humidity: {weather.humidity}%</li>
-              <li>Wind: {Math.round(weather.wind)} km/h</li>
-              <li>
-                <img src={weather.image} alt={weather.description} />
-              </li>
-            </ul>
-
-            <hr />
+            <div className="current-temperature">{currentTemp}</div>
 
             <div class="weather-forecast" id="forecast"></div>
           </div>
