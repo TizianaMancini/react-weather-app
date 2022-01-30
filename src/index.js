@@ -6,7 +6,7 @@ import "./index.css";
 function App() {
   return (
     <div className="App">
-      <Weather />
+      <Weather defaultCity="Toronto" temperature="5" />
       <small>
         <a
           href="https://github.com/TizianaMancini/Weather-App"

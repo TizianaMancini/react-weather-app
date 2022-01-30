@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./index.css";
 
-export default function Weather() {
+export default function Weather(props) {
   let [weather, setWeather] = useState({});
-  let [city, setCity] = useState(null);
+  let [city, setCity] = useState();
   let [load, setLoad] = useState(false);
 
   function showTemperature(response) {
@@ -86,7 +86,7 @@ export default function Weather() {
           <div class="clearfix weather-temperature">
             <img src={weather.image} alt={weather.description} id="icon" />
 
-            <strong id="temperature">{Math.round(weather.temperature)} </strong>
+            <strong id="temperature">{Math.round(weather.temperature)}</strong>
 
             <span class="units">
               <div class="btn-group" role="group" aria-label="Basic example">
@@ -134,7 +134,6 @@ export default function Weather() {
         <div class="weather-app-wrapper">
           <div className="weather-app">
             <div className="search-form">{display}</div>
-
             <div className="current-temperature">{currentTemp}</div>
 
             <div class="weather-forecast" id="forecast"></div>
@@ -148,10 +147,6 @@ export default function Weather() {
         <div class="weather-app-wrapper">
           <div className="weather-app">
             <div className="search-form">{display}</div>
-
-            <div className="current-temperature">{currentTemp}</div>
-
-            <div class="weather-forecast" id="forecast"></div>
           </div>
         </div>
       </div>
